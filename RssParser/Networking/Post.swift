@@ -6,4 +6,8 @@
 //  Copyright © 2020 Константин Киски. All rights reserved.
 //
 
-import Foundation
+struct Post {
+    var title: String
+    var link: String
+    var date: String
+}
