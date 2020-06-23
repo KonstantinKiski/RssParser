@@ -10,4 +10,6 @@ struct Post {
     var title: String
     var link: String
     var date: String
+    var fullDescription: String
+    var enclosure: String
 }

@@ -20,11 +20,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Variables
     
     private var posts = [Post]()
+    private var currentIndex = IndexPath()
     private var parser = XMLParser()
     private var tempPost: Post?
     private var tempElement: String?
-    
-    
     
     // MARK: - Life cycle
     
@@ -33,6 +32,12 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         startLoad()
         initRefreshControl()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? DetailPostViewController {
+            controller.currentPost = posts[currentIndex.row]
+        }
     }
 
     // MARK: - Private function
@@ -80,7 +85,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         tempElement = elementName
         if elementName == "item" {
-            tempPost = Post(title: "", link: "", date: "")
+            tempPost = Post(title: "", link: "", date: "", fullDescription: "", enclosure: "")
         }
     }
     
@@ -101,6 +106,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 tempPost?.link = post.link+string
             } else if tempElement == "pubDate" {
                 tempPost?.date = post.date+string
+            } else if tempElement == "yandex:full-text" {
+                tempPost?.fullDescription = post.fullDescription+string
+            } else if tempElement == "enclosure" {
+                tempPost?.enclosure = post.enclosure+string
             }
         }
     }
@@ -122,6 +131,11 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let currentPost = posts[indexPath.row]
         cell.setData(data: NewsTableViewCell.NewsCellData(title: currentPost.title, pubDate: currentPost.date))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        currentIndex = indexPath
+        return indexPath
     }
 }
 

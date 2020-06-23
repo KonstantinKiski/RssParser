@@ -14,6 +14,9 @@
 		AE1E6FFD249BB5A200FD678B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE1E6FFC249BB5A200FD678B /* Assets.xcassets */; };
 		AE1E7000249BB5A200FD678B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1E6FFE249BB5A200FD678B /* LaunchScreen.storyboard */; };
 		AE31E982249BC742008FBB53 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE31E981249BC742008FBB53 /* Post.swift */; };
+		AEB1D59024A246F3007D8B6A /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB1D58F24A246F3007D8B6A /* DetailPostViewController.swift */; };
+		AEB1D59324A24C05007D8B6A /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB1D59224A24C05007D8B6A /* DefaultTableViewCell.swift */; };
+		AEB1D59524A24D5A007D8B6A /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB1D59424A24D5A007D8B6A /* TableData.swift */; };
 		AEF3E09D249BB7A80082338F /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3E09C249BB7A80082338F /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		AE1E6FFF249BB5A200FD678B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE1E7001249BB5A200FD678B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE31E981249BC742008FBB53 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		AEB1D58F24A246F3007D8B6A /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
+		AEB1D59224A24C05007D8B6A /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
+		AEB1D59424A24D5A007D8B6A /* TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
 		AEF3E09C249BB7A80082338F /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,8 +68,8 @@
 			children = (
 				AE1E6FF3249BB5A000FD678B /* AppDelegate.swift */,
 				AE1E6FF5249BB5A000FD678B /* SceneDelegate.swift */,
-				AE31E980249BC733008FBB53 /* Networking */,
 				AEF3E09E249BB7F90082338F /* UI */,
+				AE31E980249BC733008FBB53 /* Networking */,
 				AE1E6FF9249BB5A000FD678B /* Main.storyboard */,
 				AE1E6FFC249BB5A200FD678B /* Assets.xcassets */,
 				AE1E6FFE249BB5A200FD678B /* LaunchScreen.storyboard */,
@@ -80,10 +86,19 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		AEB1D59124A24BB5007D8B6A /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				AEB1D59424A24D5A007D8B6A /* TableData.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		AEF3E09B249BB7980082338F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				AEF3E09C249BB7A80082338F /* NewsTableViewCell.swift */,
+				AEB1D59224A24C05007D8B6A /* DefaultTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -91,8 +106,10 @@
 		AEF3E09E249BB7F90082338F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AEB1D59124A24BB5007D8B6A /* Builder */,
 				AEF3E09B249BB7980082338F /* Cell */,
 				AE1E6FF7249BB5A000FD678B /* NewsViewController.swift */,
+				AEB1D58F24A246F3007D8B6A /* DetailPostViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -172,7 +189,10 @@
 				AE1E6FF4249BB5A000FD678B /* AppDelegate.swift in Sources */,
 				AEF3E09D249BB7A80082338F /* NewsTableViewCell.swift in Sources */,
 				AE1E6FF6249BB5A000FD678B /* SceneDelegate.swift in Sources */,
+				AEB1D59524A24D5A007D8B6A /* TableData.swift in Sources */,
 				AE31E982249BC742008FBB53 /* Post.swift in Sources */,
+				AEB1D59024A246F3007D8B6A /* DetailPostViewController.swift in Sources */,
+				AEB1D59324A24C05007D8B6A /* DefaultTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
